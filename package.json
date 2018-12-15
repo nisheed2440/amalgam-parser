@@ -40,11 +40,15 @@
   ],
   "dependencies": {
     "@types/node": "^8.0.0",
+    "parse5": "^5.1.0",
     "tslib": "^1.9.3"
   },
   "devDependencies": {
+    "@types/entities": "^1.1.0",
     "@types/jest": "^23.0.0",
+    "@types/parse5": "^5.0.0",
     "dts-bundle": "^0.7.2",
+    "entities": "^1.1.2",
     "jest": "^23.0.0",
     "pascal-case": "^2.0.1",
     "prettier": "^1.13.7",
