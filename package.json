@@ -1,8 +1,8 @@
 {
-  "name": "typescript-library-boilerplate",
-  "version": "0.1.0",
-  "description": "Boilerplate for TypeScript libraries",
-  "author": "Max Davidson <davidsonmax@gmail.com>",
+  "name": "amalgam-parser",
+  "version": "0.0.1",
+  "description": "Parser for Amalgam UI to support MPA",
+  "author": "Nisheed Jagadish <nisheed2016@gmail.com>",
   "license": "MIT",
   "repository": "git+https://github.com/maxdavidson/typescript-library-boilerplate.git",
   "main": "lib/index.js",
@@ -25,13 +25,15 @@
     "postbuild": "rimraf {lib,es}/**/__tests__ {lib,es}/**/*.{spec,test}.{js,d.ts,js.map}",
     "posttest": "npm run typecheck && npm run lint",
     "preversion": "npm test",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "docs": "jsdoc2md lib/*.js > API.md"
   },
   "keywords": [
     "typescript",
     "lib",
     "library",
-    "boilerplate"
+    "parser",
+    "parse5"
   ],
   "files": [
     "lib",
@@ -50,6 +52,7 @@
     "dts-bundle": "^0.7.2",
     "entities": "^1.1.2",
     "jest": "^23.0.0",
+    "jsdoc-to-markdown": "^4.0.1",
     "pascal-case": "^2.0.1",
     "prettier": "^1.13.7",
     "rimraf": "^2.6.1",

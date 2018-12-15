@@ -56,38 +56,42 @@ describe('Initialization', () => {
 });
 
 describe('Styles and scripts utilities', () => {
+  // tslint:disable:no-string-literal
   const parser = new AmalgamParser();
 
   describe('Validate head script or styles', () => {
     test('should return true for meta tags', () => {
-      expect(parser.isValidHeadElement(`<meta charset="UTF-8">`)).toBe(true);
+      expect(parser['isValidHeadElement'](`<meta charset="UTF-8">`)).toBe(true);
     });
     test('should return true for link tags', () => {
-      expect(parser.isValidHeadElement(`<link href="test.css" as="style" rel="preload">`)).toBe(true);
+      expect(parser['isValidHeadElement'](`<link href="test.css" as="style" rel="preload">`)).toBe(true);
     });
     test('should return true for script tags', () => {
-      expect(parser.isValidHeadElement(`<script src="test.js"></script>`)).toBe(true);
-      expect(parser.isValidHeadElement(`<script>var test = 'test'</script>`)).toBe(true);
+      expect(parser['isValidHeadElement'](`<script src="test.js"></script>`)).toBe(true);
+      expect(parser['isValidHeadElement'](`<script>var test = 'test'</script>`)).toBe(true);
     });
     test('should return true for style tags', () => {
-      expect(parser.isValidHeadElement(`<style>.body {background-color: red}</style>`)).toBe(true);
+      expect(parser['isValidHeadElement'](`<style>.body {background-color: red}</style>`)).toBe(true);
     });
+    // tslint:enable:no-string-literal
   });
 
   describe('Validate body script or styles', () => {
+    // tslint:disable:no-string-literal
     test('should return false for meta tags', () => {
-      expect(parser.isValidBodyElement(`<meta charset="UTF-8">`)).toBe(false);
+      expect(parser['isValidBodyElement'](`<meta charset="UTF-8">`)).toBe(false);
     });
     test('should return false for link tags', () => {
-      expect(parser.isValidBodyElement(`<link href="test.css" as="style" rel="preload">`)).toBe(false);
+      expect(parser['isValidBodyElement'](`<link href="test.css" as="style" rel="preload">`)).toBe(false);
     });
     test('should return true for script tags', () => {
-      expect(parser.isValidBodyElement(`<script src="test.js"></script>`)).toBe(true);
-      expect(parser.isValidBodyElement(`<script>var test = 'test'</script>`)).toBe(true);
+      expect(parser['isValidBodyElement'](`<script src="test.js"></script>`)).toBe(true);
+      expect(parser['isValidBodyElement'](`<script>var test = 'test'</script>`)).toBe(true);
     });
     test('should return true for style tags', () => {
-      expect(parser.isValidBodyElement(`<style>.body {background-color: red}</style>`)).toBe(true);
+      expect(parser['isValidBodyElement'](`<style>.body {background-color: red}</style>`)).toBe(true);
     });
+    // tslint:enable:no-string-literal
   });
 
   describe('Create link tags', () => {
@@ -270,8 +274,6 @@ describe('Components handler', () => {
       templateSanitizer,
     });
     parser.parse(sampleHTML).then(parsedOutput => {
-      // tslint:disable-next-line:no-console
-      console.log(parsedOutput);
       expect(parsedOutput).toContain('<div>header</div>');
       expect(parsedOutput).toContain('<div>recommendations</div>');
       expect(parsedOutput).toContain('<script>var output = {');
