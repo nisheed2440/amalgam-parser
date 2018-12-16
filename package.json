@@ -27,7 +27,7 @@
     "preversion": "npm test",
     "postversion": "git push && git push --tags",
     "docs": "jsdoc2md lib/*.js > API.md",
-    "perf": "npm run build && node ./perf/test.js"
+    "perf": "npm run build && node ./perf/index.js"
   },
   "keywords": [
     "typescript",
