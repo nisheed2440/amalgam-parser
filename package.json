@@ -26,7 +26,8 @@
     "posttest": "npm run typecheck && npm run lint",
     "preversion": "npm test",
     "postversion": "git push && git push --tags",
-    "docs": "jsdoc2md lib/*.js > API.md"
+    "docs": "jsdoc2md lib/*.js > API.md",
+    "perf": "npm run build && node ./perf/test.js"
   },
   "keywords": [
     "typescript",

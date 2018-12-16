@@ -28,7 +28,7 @@ export class AmalgamParser {
    * @readonly
    */
   readonly componentRegex: RegExp = new RegExp(
-    / <([^\s]+)(.*|\s*)?data-component="([^"]+?)"(.*|\s*)?>(.*|\s*)?<\/\1>/,
+    /<([^\s]+)(.*|\s*)?data-component="([^"]+?)"(.*|\s*)?>(.*|\s*)?<\/\1>/,
     'gi',
   );
   /**
@@ -85,8 +85,7 @@ export class AmalgamParser {
               this.options.bodyScriptsStyles || [],
             )
           : htmlInput;
-        const inputRegex: RegExp = new RegExp(htmlInput, 'gi');
-        outputTemplate = outputTemplate.replace(inputRegex, htmlOutput);
+        outputTemplate = outputTemplate.replace(htmlInput, htmlOutput);
       }),
     );
     return this.htmlAssetsUpdater(outputTemplate);
