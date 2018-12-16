@@ -50,5 +50,6 @@ fs.readFile(path.join(__dirname, 'sample.html'), 'utf8', (err, html) => {
   parser.parse(html).then(data => {
     // console.log(data);
     elapsed_time('custom parser');
+    fs.writeFileSync(path.join(__dirname, '..', 'dist', 'output.html'), data, 'utf8');
   });
 });
