@@ -27,7 +27,7 @@ function templateSanitizer(template) {
 }
 
 // Some async function to resolve components could be react render to string
-function componentHandler(node, _headStylesScripts, _bodyStylesScripts) {
+function componentHandler(node, _matchedHtml, _headStylesScripts, _bodyStylesScripts) {
   return new Promise(resolve => {
     const attrs = {};
     node.attrs.forEach(attr => {
