@@ -1,6 +1,6 @@
 {
   "name": "amalgam-parser",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Parser for Amalgam UI to support MPA to SPA conversion",
   "author": "Nisheed Jagadish <nisheed2016@gmail.com>",
   "license": "MIT",
