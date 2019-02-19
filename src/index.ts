@@ -22,13 +22,13 @@ export class AmalgamParser {
     templateSanitizer: (template: string) => template,
   };
   /**
-   * Regex to get the component by the data-component property
+   * Regex to get the component controller by the data-controller property
    * @memberof AmalgamParser
    * @instance
    * @readonly
    */
   readonly componentRegex: RegExp = new RegExp(
-    /<([^\s]+)(.*|\s*)?data-component="([^"]+?)"(.*|\s*)?>(.*|\s*)?<\/\1>/,
+    /<([^\s]+)(.*|\s*)?data-controller="([^"]+?)"(.*|\s*)?>(.*|\s*)?<\/\1>/,
     'gi',
   );
   /**

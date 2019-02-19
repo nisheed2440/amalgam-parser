@@ -23,7 +23,7 @@ describe('Initialization', () => {
     <title>Document</title>
 </head>
 <body>
-    <div data-component="header"></div>
+    <div data-controller="header"></div>
 </body>
 </html>
 `;
@@ -216,18 +216,18 @@ describe('Components handler', () => {
         <title>Document</title>
     </head>
     <body>
-        <div data-component="header"></div>
-        <div data-component="recommendations" data-json="{"cms-content":{"isAuthoring":"N","propertyId":"hpHero","target":"recommendations"}}" id="1544655611025a172ca8d-445f-42b1-bc7c-bfdb2c209266" data-isCSR="false">
+        <div data-controller="header"></div>
+        <div data-controller="recommendations" data-json="{"cms-content":{"isAuthoring":"N","propertyId":"hpHero","target":"recommendations"}}" id="1544655611025a172ca8d-445f-42b1-bc7c-bfdb2c209266" data-isCSR="false">
 		</div>
     </body>
     </html>
     `;
   });
-  test('should modify input template using `data-component` attribute', done => {
+  test('should modify input template using `data-controller` attribute', done => {
     componentHandler = (node, _html, headAssets, bodyAssets) => {
       let output = '';
       node.attrs.forEach(element => {
-        if (element.name === 'data-component') {
+        if (element.name === 'data-controller') {
           output += `<div>${element.value}</div>`;
           headAssets.push(`${element.value}.css`);
           bodyAssets.push(`${element.value}.js`);
@@ -258,7 +258,7 @@ describe('Components handler', () => {
     componentHandler = (node, _html, headAssets, bodyAssets) => {
       let output = '';
       node.attrs.forEach(attr => {
-        if (attr.name === 'data-component') {
+        if (attr.name === 'data-controller') {
           output += `<div>${attr.value}</div>`;
           headAssets.push(`${attr.value}.css`);
           bodyAssets.push(`${attr.value}.js`);
